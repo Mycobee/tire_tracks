@@ -13,7 +13,6 @@ describe 'As a user on the manufacturers index' do
   end
   
   it 'should display all cars belonging to each manufacturer' do
-
     visit manufacturers_path
      
     within "#manufacturer-#{@manufacturer_1.id}" do
