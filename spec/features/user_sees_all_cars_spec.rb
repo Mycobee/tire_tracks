@@ -14,19 +14,23 @@ describe 'As a user on the manufacturers index' do
   
   it 'should display all cars belonging to each manufacturer' do
     visit manufacturers_path
-     
-    within "#manufacturer-#{@manufacturer_1.id}" do
+     save_and_open_page
+    within "#car-stat-list-#{@car_1a.id}" do
       expect(page).to have_content(@car_1a.name)
       expect(page).to have_content(@car_1a.year)
+    end
 
+    within "#car-stat-list-#{@car_1b.id}" do
       expect(page).to have_content(@car_1b.name)
       expect(page).to have_content(@car_1b.year)
     end
 
-    within "#manufacturer-#{@manufacturer_2.id}" do
+    within "#car-stat-list-#{@car_2a.id}" do 
       expect(page).to have_content(@car_2a.name)
       expect(page).to have_content(@car_2a.year)
+    end
 
+    within "#car-stat-list-#{@car_2b.id}" do
       expect(page).to have_content(@car_2b.name)
       expect(page).to have_content(@car_2b.year)
     end
