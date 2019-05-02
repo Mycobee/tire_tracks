@@ -1,15 +1,22 @@
-<div id="manufacturer-box">
+<div id="body-box">
 <h1>Tire Tracks</h1>
 
 <% @manufacturers.each do |manufacturer| %>
-    <section class="manufacturer-card" id="manufacturer-<%= manufacturer.id %>"
-        
+    <section class="manufacturer-card" id="manufacturer-<%= manufacturer.id %>" 
         <ul>
             <li>Manufacturer Name: <%= manufacturer.name %> </li>
             <li>City: <%= manufacturer.city %> </li>
             <li>Year Founded: <%= manufacturer.year_founded %> </li>
             <br>
         </ul>
+        <section class="car-box">
+            <% manufacturer.cars.each do |car| %>
+                <ul id="car-stat-list-<%= car.id %>">
+                    <li> <%= car.year %> </li>
+                    <li> <%= car.name %> </li>
+                </ul>
+            <% end %>
+        </section>
     </section>
 <% end %>
 

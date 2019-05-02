@@ -9,7 +9,7 @@ describe 'As a visitor on the manufacturer index page' do
     
     it 'should display all the manufacturers' do
         visit manufacturers_path
-        save_and_open_page
+        
         within "#manufacturer-#{@manufacturer_1.id}" do
             expect(page).to have_content(@manufacturer_1.name)
             expect(page).to have_content(@manufacturer_1.year_founded)
