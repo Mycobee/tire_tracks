@@ -24,7 +24,7 @@ describe 'As a user visiting /manufacturers/new' do
     click_button "Create Manufacturer"
 
     expect(current_path).to eq(manufacturers_path)
-
+    manufacturer = Manufacturer.last
     
     within "#manufacturer-#{manufacturer.id}"
         expect(page).to have_content("Manufacturer Name: Fake Car man")
