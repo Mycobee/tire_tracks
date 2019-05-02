@@ -10,7 +10,7 @@ describe 'as a user' do
         
         it 'should return a page with all cars matching that age request' do
             visit '/manufacturers?year_founded=1911'
-        
+         
             expect(page).to_not have_content("Manufacturer Name: #{@manufacturer_1.name}")
             expect(page).to have_content("Manufacturer Name: #{@manufacturer_2.name}")
             expect(page).to have_content("Manufacturer Name: #{@manufacturer_3.name}")
