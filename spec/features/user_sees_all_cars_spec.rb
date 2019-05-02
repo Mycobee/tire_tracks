@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'As a user on the manufacturers index' do
   before(:each) do
-    @manufacturer_1 = Manufacturer.create!(name: "Aston Martin", city: "London, UK", year_founded: 1913)
+    @manufacturer_1 = Manufacturer.create!(name: "Triumph", city: "London, UK", year_founded: 1913)
     @manufacturer_2 = Manufacturer.create!(name: "Chevrolet", city: "Detroit, MI", year_founded: 1911)
 
     @car_1a = @manufacturer_1.cars.create!(name: "car1a", year: "1921")
@@ -14,7 +14,7 @@ describe 'As a user on the manufacturers index' do
   
   it 'should display all cars belonging to each manufacturer' do
     visit manufacturers_path
-     save_and_open_page
+    
     within "#car-stat-list-#{@car_1a.id}" do
       expect(page).to have_content(@car_1a.name)
       expect(page).to have_content(@car_1a.year)
