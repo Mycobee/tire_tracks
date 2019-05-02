@@ -14,7 +14,7 @@ describe 'As a user on the manufacturers index' do
   
   it 'should display all cars belonging to each manufacturer' do
     visit manufacturers_path
-     save_and_open_page
+    
     within "#car-stat-list-#{@car_1a.id}" do
       expect(page).to have_content(@car_1a.name)
       expect(page).to have_content(@car_1a.year)
