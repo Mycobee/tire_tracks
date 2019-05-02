@@ -15,6 +15,18 @@ describe 'As a user visiting /manufacturers/new' do
   it 'should render a new form, and create a new manufacturer' do
     visit new_manufacturer_path
     
+    expect(current_path).to eq(new_manufacturer_path)
+
+    fill_in "manufacturer[name]", with: "Fake Car man"
+    fill_in "manufacturer[city]", with: "Dublin, Ireland"
+    fill_in "manufacturer[year_founded]", with: 1964
+    fill_in "manufacturer[logo_url]", with: "https://getuikit.com/v2/docs/images/placeholder_600x400.svg"
+    click_button "Create Manufacturer"
+
+    expect(current_path).to eq(manufacturers_path)
+
     
-  end
+    within "#manufacturer-#{manufacturer.id}"
+        expect(page).to have_content("Manufacturer Name: Fake Car man")
+    end
 end
