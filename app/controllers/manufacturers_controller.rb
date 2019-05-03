@@ -3,7 +3,7 @@ class ManufacturersController < ApplicationController
         if params[:year_founded] != nil
             @manufacturers = Manufacturer.where(year_founded: (params[:year_founded]))
         else   
-            @manufacturers = Manufacturer.all
+            @manufacturers = Manufacturer.includes(:cars)
         end
     end
 

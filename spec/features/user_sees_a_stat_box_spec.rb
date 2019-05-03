@@ -20,8 +20,8 @@ describe 'as a user on the manufacturers index page' do
             visit manufacturers_path
             
             within "#stats-box" do
-            expect(page).to have_content("Average Year Founded: #{@manufacturers.avg_year_founded}")
-            expect(page).to have_content("Unique Cities: #{@manufacturers.unique_cities}")
+                expect(page).to have_content("Average Year Founded: #{@manufacturers.avg_year_founded}")
+                expect(page).to have_content("Unique Cities: #{@manufacturers.unique_cities}")
             end
         end
     end

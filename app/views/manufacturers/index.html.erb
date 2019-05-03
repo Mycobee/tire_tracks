@@ -1,23 +1,31 @@
 <div id="body-box">
 <h1>Tire Tracks</h1>
 
+<div id="stats-box">
+    <h3>Manufacturer Statistics</h3>
+    <ul>
+        <li>Average Year Founded: <%= @average_year %></li>
+    </ul>
+</div>
+
 <% @manufacturers.each do |manufacturer| %>
     <section class="manufacturer-card" id="manufacturer-<%= manufacturer.id %>" 
         <ul>
             <li>Manufacturer Name: <%= manufacturer.name %> </li>
             <li>City: <%= manufacturer.city %> </li>
             <li>Year Founded: <%= manufacturer.year_founded %> </li>
-            <li>Car Count: <%= manufacturer.car_count %></li>
             <img height="200" width="150" src="<%= manufacturer.logo_url %>" alt="logo-<%= manufacturer.id %>">
-
+            <li>Car Count: <%= manufacturer.car_count %></li>
+            
             <br>
         </ul>
+        
         <section class="car-box">
             <% manufacturer.cars.each do |car| %>
-                <ul id="car-stat-list-<%= car.id %>">
-                    <li> <%= car.year %> </li>
-                    <li> <%= car.name %> </li>
-                </ul>
+            <ul id="car-stat-list-<%= car.id %>">
+                <li> <%= car.year %> </li>
+                <li> <%= car.name %> </li>
+            </ul>
             <% end %>
         </section>
     </section>
