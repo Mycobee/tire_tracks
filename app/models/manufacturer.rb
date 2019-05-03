@@ -8,4 +8,8 @@ class Manufacturer < ApplicationRecord
     def car_count
         cars.size
     end
+
+    def self.avg_year_founded
+        Manufacturer.pluck(:year_founded).sum / Manufacturer.pluck(:year_founded).count
+    end
 end

@@ -31,11 +31,11 @@ RSpec.describe Manufacturer, type: :model do
 
     describe "class methods" do
       it '.avg_year_founded' do
-        expect(@manufacturers.avg_year_founded).to eq(1923)
+        expect(@manufacturers.avg_year_founded).to eq(1914)
       end
 
-      it '.unique_cities' do
-        expect(@manufacturers.)
-      end
+      # it '.unique_cities' do
+      #   expect(@manufacturers.)
+      # end
     end
   end
