@@ -6,6 +6,14 @@ class Manufacturer < ApplicationRecord
     has_many :cars
 
     def car_count
-        cars.count
+        cars.size
+    end
+
+    def self.avg_year_founded
+        Manufacturer.average(:year_founded)
+    end
+
+    def self.unique_cities
+        Manufacturer.select(:city).distinct.pluck(:city)
     end
 end

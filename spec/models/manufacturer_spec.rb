@@ -1,6 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe Manufacturer, type: :model do
+  before(:each) do
+      @manufacturer_1 = Manufacturer.create!(name: "Triumph", city: "London, UK", year_founded: 1913)
+      @manufacturer_2 = Manufacturer.create!(name: "Mercedes", city: "Berlin, Germany", year_founded: 1915)
+      @manufacturer_3 = Manufacturer.create!(name: "BMW", city: "Berlin, Germany", year_founded: 1914)
+      @manufacturer_3 = Manufacturer.create!(name: "Ford", city: "Chicago, IL", year_founded: 1914)
+
+      @car_1a = @manufacturer_1.cars.create!(name: "car1a", year: 1924)
+      @car_1b = @manufacturer_1.cars.create!(name: "car1b", year: 1922)
+
+      @manufacturers = Manufacturer.all
+  end
+
     describe 'validations' do
       it {should validate_presence_of :name}
       it {should validate_presence_of :city}
@@ -13,12 +25,19 @@ RSpec.describe Manufacturer, type: :model do
 
     describe 'instance methods' do
       it '#car_count' do
-        manufacturer_1 = Manufacturer.create!(name: "Triumph", city: "London, UK", year_founded: 1913)
+        
 
-        car_1a = manufacturer_1.cars.create!(name: "car1a", year: "1921")
-        car_1b = manufacturer_1.cars.create!(name: "car1b", year: "1922")
+        expect(@manufacturer_1.car_count).to eq(2)
+      end
+    end
 
-        expect(manufacturer_1.car_count).to eq(2)
+    describe "class methods" do
+      it '.avg_year_founded' do
+        expect(@manufacturers.avg_year_founded).to eq(1914)
+      end
+
+      it '.unique_cities' do
+        expect(@manufacturers.unique_cities).to eq(["Berlin, Germany", "London, UK", "Chicago, IL"])
       end
     end
   end
