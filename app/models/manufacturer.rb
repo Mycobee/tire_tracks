@@ -12,4 +12,8 @@ class Manufacturer < ApplicationRecord
     def self.avg_year_founded
         Manufacturer.average(:year_founded)
     end
+
+    def self.unique_cities
+        Manufacturer.select(:city).distinct.pluck(:city)
+    end
 end

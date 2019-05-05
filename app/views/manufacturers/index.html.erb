@@ -2,11 +2,14 @@
 <h1>Tire Tracks</h1>
 
 <div id="stats-box">
-    <h3>Manufacturer Statistics</h3>
+    <h1>Manufacturer Statistics</h1>
+    <h3>Average Year Founded: <%= @avg_year_founded.round(0).to_i %></h3>
+    <h3>Unique Cities:</h3>
+    <% @unique_cities.each do |city| %>
     <ul>
-        <li>Average Year Founded: <%= @avg_year_founded.round(0) %></li>
-        <li>Unique Cities: <%= @unique_cities %></li>
+        <li><%= city %></li>
     </ul>
+    <% end %>
 </div>
 
 <% @manufacturers.each do |manufacturer| %>
