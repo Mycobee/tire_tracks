@@ -5,6 +5,9 @@ class ManufacturersController < ApplicationController
         else   
             @manufacturers = Manufacturer.includes(:cars)
         end
+       
+        @avg_year_founded = @manufacturers.avg_year_founded
+        @unique_cities = @manufacturers.unique_cities
     end
 
     def new

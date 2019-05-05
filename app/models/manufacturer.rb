@@ -10,6 +10,6 @@ class Manufacturer < ApplicationRecord
     end
 
     def self.avg_year_founded
-        Manufacturer.pluck(:year_founded).sum / Manufacturer.pluck(:year_founded).count
+        Manufacturer.average(:year_founded)
     end
 end

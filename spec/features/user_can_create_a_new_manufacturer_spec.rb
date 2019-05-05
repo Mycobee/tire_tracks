@@ -14,7 +14,7 @@ describe 'As a user visiting /manufacturers/new' do
   
   it 'should render a new form, and create a new manufacturer' do
     visit new_manufacturer_path
-    
+
     expect(current_path).to eq(new_manufacturer_path)
 
     fill_in "manufacturer[name]", with: "Fake Car man"
