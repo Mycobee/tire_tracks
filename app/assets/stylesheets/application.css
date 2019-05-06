@@ -13,3 +13,102 @@
  *= require_tree .
  *= require_self
  */
+
+ h1 {
+     font-size: 25rem;
+     align-self: center;
+     text-decoration: underline;
+ }
+
+ .manufacturer-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: solid;
+    border-width: 2rem;
+    justify-content: space-evenly;
+    align-content: center;
+    padding: 2rem;
+    font-size: 4rem;
+    border-radius: 5rem;
+    margin: 1rem;
+ }
+
+ .manufacturer-deets {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-evenly;
+
+ }
+
+ .cars-card {
+     display: flex;
+     flex-direction: row;
+     align-content: center;
+ 
+ }
+ 
+ .car-deets {
+     display: flex;
+    align-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 5rem;
+    border: solid;
+ }
+
+ .manufacturer-cars {
+     display: flex;
+     flex-wrap: wrap;
+     
+ }
+
+ .logo-pic {
+ align-self: center;
+  max-width: 1000px;
+  max-height: auto;
+    
+ }
+ 
+ .car-pic {
+
+     max-width: 1000px;
+     max-height: auto;
+     
+ }
+
+
+
+ #stats-box {
+     display: flex;
+     font-size: 5rem;
+     justify-content: center;
+     justify-content: space-evenly;
+     align-items: center;
+     border: solid;
+     border-width: 2rem;
+     border-radius: 5rem;
+     padding: 1rem;
+ }
+
+ #city-list {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+ }
+
+ #manufacturer-list {
+     display: flex;
+     flex-direction: column;
+    
+}
+
+#body-box {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: darkkhaki;
+}
+ 
