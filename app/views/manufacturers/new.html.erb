@@ -1,12 +1,18 @@
-<%= form_for @manufacturer do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-    <%= f.label :year_founded %>
-    <%= f.number_field :year_founded %>
-    <%= f.label :logo_url %>
-    <%= f.text_field :logo_url %>
+<div id="new-manufacturer">
+    <%= form_for @manufacturer do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <br>
+        <%= f.label :city %>
+        <%= f.text_field :city %>
+        <br>
+        <%= f.label :year_founded %>
+        <%= f.number_field :year_founded %>
+        <br>
+        <%= f.label :logo_url %>
+        <%= f.text_field :logo_url %>
+        <br>
 
-    <%= f.submit %>
-<% end %>
+        <%= f.submit %>
+    <% end %>
+</div>
