@@ -57,8 +57,13 @@
     margin: 1rem;
     border-radius: 5rem;
     border: solid;
+    border-width: .5rem;
  }
 
+ .title-pic {
+     align-self: center;
+     padding: 2rem;
+ }
  .manufacturer-cars {
      display: flex;
      flex-wrap: wrap;
@@ -109,6 +114,14 @@
     display: flex;
     flex-direction: column;
     align-content: center;
+    background-color: darkkhaki;
+}
+
+#new-manufacturer {
+    font-size: 10rem;
+}
+
+body {
     background-color: darkkhaki;
 }
  
