@@ -2,37 +2,44 @@
 <h1>Tire Tracks</h1>
 
 <div id="stats-box">
-    <h1>Manufacturer Statistics</h1>
-    <h3>Average Year Founded: <%= @avg_year_founded.round(0).to_i %></h3>
-    <h3>Unique Cities:</h3>
-    <% @unique_cities.each do |city| %>
-    <ul>
-        <li><%= city %></li>
-    </ul>
-    <% end %>
+    <h3>Manufacturer Statistics</h3>
+    <article id="city-list">
+        <h3>Average Year Founded: <%= @avg_year_founded.round(0).to_i %></h3>
+        <h3>Unique Cities:</h3>
+
+        <ul>
+        <% @unique_cities.each do |city| %>
+            <li><%= city %></li>
+            <% end %>
+        </ul>
+    </article>
 </div>
 
-<% @manufacturers.each do |manufacturer| %>
-    <section class="manufacturer-card" id="manufacturer-<%= manufacturer.id %>" 
-        <ul>
-            <li>Manufacturer Name: <%= manufacturer.name %> </li>
-            <li>City: <%= manufacturer.city %> </li>
-            <li>Year Founded: <%= manufacturer.year_founded %> </li>
-            <img height="200" width="150" src="<%= manufacturer.logo_url %>" alt="logo-<%= manufacturer.id %>">
-            <li>Car Count: <%= manufacturer.car_count %></li>
+<section id="manufacturer-list">
+    <% @manufacturers.each do |manufacturer| %>
+        <section class="manufacturer-card" id="manufacturer-<%= manufacturer.id %>">
             
-            <br>
-        </ul>
-        
-        <section class="car-box">
-            <% manufacturer.cars.each do |car| %>
-            <ul id="car-stat-list-<%= car.id %>">
-                <li> <%= car.year %> </li>
-                <li> <%= car.name %> </li>
-            </ul>
-            <% end %>
+            <ul class="manufacturer-deets">
+                <img class="logo-pic"  src=<%= manufacturer.logo_url %>>
+                <h3>Manufacturer Name: <%= manufacturer.name %> </h3>
+                <h3>City: <%= manufacturer.city %> </h3>
+                <h3>Year Founded: <%= manufacturer.year_founded %> </h3>
+                <h3>Car Count: <%= manufacturer.car_count %></h3>
+            </ul>   
+            
+            <section class="manufacturer-cars">
+                <% manufacturer.cars.each do |car| %>
+                    <section class="cars-card">
+                        <article class="car-deets" id="car-stat-list-<%= car.id %>">
+                            <h5>Model: <%= car.name %> </h5>
+                            <h5>Year: <%= car.year %></h5>
+                            <img class="car-pic" src=<%= car.car_thumb %> alt="car-<% car.id %>">
+                        </article>
+                    </section>
+                <% end %>
+            </section>
         </section>
-    </section>
-<% end %>
+    <% end %>
+</section>
 
 </div>
